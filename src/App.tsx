@@ -1,13 +1,15 @@
 import React from 'react';
-import Letter from "./Letter";
+import GuessRow from './GuessRow';
 import './App.css';
+import Emoji from "./Emoji";
 
 function App() {
+    const targetEmoji = Emoji.randomEmoji();
+
     return (
         <div className="App">
-            <Letter color="green">H</Letter>
-            <Letter color="yellow">H</Letter>
-            <Letter color="gray">H</Letter>
+            <GuessRow emojiName="kissing face." correctEmojiName={targetEmoji}/>
+            <GuessRow emojiName={Emoji.randomEmoji()} correctEmojiName={targetEmoji}/>
         </div>
     );
 }
