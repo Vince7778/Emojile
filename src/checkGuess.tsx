@@ -41,6 +41,9 @@ export default function checkGuess(guess: string, correct: string): string[] {
             mapAdd(wmap, wspl[i], 1);
             mapAdd(cmap, cspl[i], 1);
         }
+        for (let i = wspl.length; i < cspl.length; i++) {
+            mapAdd(cmap, cspl[i], 1);
+        }
 
         // scan for yellows
         for (let i = 0; i < wspl.length; i++) {
