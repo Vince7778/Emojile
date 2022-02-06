@@ -20,6 +20,7 @@ function EmojiKeyboard(props: EmojiKeyboardProps) {
     });
 
     useEffect(() => {
+        ReactTooltip.hide();
         ReactTooltip.rebuild();
     });
 

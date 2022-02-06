@@ -1,11 +1,17 @@
-import emojiJson from "./emojiOut.json";
+import emojiJsonRaw from "./emojiOut.json";
 import twemoji from "twemoji";
 
+const emojiJson = emojiJsonRaw.map(j => {
+    return {
+        name: j.name.toLowerCase(),
+        char: j.char
+    }
+});
 const nameList = emojiJson.map(j => j.name+".");
 
 const Emoji = {
     getChar: (name: string): string => {
-        const res = emojiJson.find(e => e.name+"." === name);
+        const res = emojiJson.find(e => (e.name+".").toLowerCase() === name.toLowerCase());
         if (!res) throw new Error("Emoji doesn't exist! " + name);
         return res.char;
     },
