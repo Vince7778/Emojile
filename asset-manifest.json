@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Emojile/static/css/main.edb9be97.css",
+    "main.js": "/Emojile/static/js/main.144278ee.js",
+    "static/js/787.14a85381.chunk.js": "/Emojile/static/js/787.14a85381.chunk.js",
+    "index.html": "/Emojile/index.html",
+    "main.edb9be97.css.map": "/Emojile/static/css/main.edb9be97.css.map",
+    "main.144278ee.js.map": "/Emojile/static/js/main.144278ee.js.map",
+    "787.14a85381.chunk.js.map": "/Emojile/static/js/787.14a85381.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.edb9be97.css",
+    "static/js/main.144278ee.js"
+  ]
+}
