@@ -11,7 +11,7 @@ import { RulesPanel } from './RulesPanel';
 function App() {
     const [target, setTarget] = useState<string>(Emoji.randomEmoji());
     const [guesses, setGuesses] = useState<string[]>([]);
-    const [footerState, setFooterState] = useState<string>("rulesPanel");
+    const [footerState, setFooterState] = useState<string>("keyboard");
 
     function onType(emojiName: string) {
         setGuesses([...guesses, emojiName]);

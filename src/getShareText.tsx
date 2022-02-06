@@ -22,5 +22,6 @@ function getColors(guesses: string[], correct: string): string[] {
 export default function getShareText(guesses: string[], correct: string): string {
     const lines = [`Emojile ${guesses.length}`];
     guesses.forEach(g => lines.push(Emoji.getChar(g) + " " + g));
+    lines.push("https://vince7778.github.io/Emojile/");
     return lines.join("\n");
 }
