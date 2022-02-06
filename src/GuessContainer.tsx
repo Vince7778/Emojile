@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import GuessRow from "./GuessRow"
 
 type GuessContainerProps = {
@@ -10,10 +11,18 @@ function GuessContainer(props: GuessContainerProps) {
         return (
             <GuessRow key={i} emojiName={g} correctEmojiName={props.correctEmojiName}/>
         );
-    })
+    });
+
+    const myRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        console.log("Scrolling");
+        if (!myRef.current) return;
+        myRef.current.scrollIntoView({ behavior: "smooth", block: "end" });
+    });
 
     return (
-        <div className="GuessContainer">
+        <div className="GuessContainer" ref={myRef}>
             <div>
                 {guessRows}
             </div>

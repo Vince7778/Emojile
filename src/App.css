@@ -62,6 +62,10 @@
     margin: 10px;
 }
 
+.GuessContainer {
+    scroll-margin-bottom: 320px;
+}
+
 img.emoji {
     height: 1em;
     width: 1em;

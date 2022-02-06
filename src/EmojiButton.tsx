@@ -1,4 +1,5 @@
 import Emoji from "./Emoji";
+import ReactTooltip from "react-tooltip";
 
 type EmojiButtonProps = {
     emojiName: string;
@@ -10,7 +11,7 @@ function EmojiButton(props: EmojiButtonProps) {
     const emojiElem = Emoji.toTwemoji(emojiCode);
 
     return (
-        <div className="EmojiButton" onClick={() => props.click(props.emojiName)}>
+        <div className="EmojiButton" onClick={() => props.click(props.emojiName)} data-tip={props.emojiName}>
             {emojiElem}
         </div>
     )
