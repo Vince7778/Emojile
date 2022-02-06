@@ -7,6 +7,7 @@ import ReactTooltip from "react-tooltip";
 type EmojiKeyboardProps = {
     filter?: string;
     onType: (emojiName: string) => void;
+    openRules: () => void;
 }
 
 function EmojiKeyboard(props: EmojiKeyboardProps) {
@@ -24,6 +25,7 @@ function EmojiKeyboard(props: EmojiKeyboardProps) {
 
     return (
         <div className="Footer">
+            <div className="DivButton TextButton-small RulesButton" onClick={props.openRules}>Rules</div>
             <EmojiSearchBox searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
             {buttons}
         </div>

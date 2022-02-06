@@ -6,24 +6,25 @@ import EmojiKeyboard from './EmojiKeyboard';
 import ReactTooltip from 'react-tooltip';
 import WinPanel from "./WinPanel";
 import getShareText from './getShareText';
+import { RulesPanel } from './RulesPanel';
 
 function App() {
     const [target, setTarget] = useState<string>(Emoji.randomEmoji());
     const [guesses, setGuesses] = useState<string[]>([]);
-    const [won, setWon] = useState<boolean>(false);
+    const [footerState, setFooterState] = useState<string>("rulesPanel");
 
     function onType(emojiName: string) {
         setGuesses([...guesses, emojiName]);
         if (emojiName === target) {
-            setWon(true);
+            setFooterState("winPanel");
             ReactTooltip.hide();
         }
     }
 
     function restart() {
-        setWon(false);
         setGuesses([]);
         setTarget(Emoji.randomEmoji());
+        setFooterState("keyboard");
     }
 
     function share() {
@@ -32,17 +33,28 @@ function App() {
     }
 
     let footerElem: JSX.Element;
-    if (won) {
-        footerElem = (<WinPanel guessCount={guesses.length} restart={restart} share={share}/>);
-    } else {
-        footerElem = (<EmojiKeyboard onType={onType} />);
+    switch (footerState) {
+        case "keyboard":
+            footerElem = (<EmojiKeyboard onType={onType} openRules={() => setFooterState("rulesPanel")}/>);
+            break;
+        case "winPanel":
+            footerElem = (<WinPanel guessCount={guesses.length} restart={restart} share={share}/>);
+            break;
+        case "rulesPanel":
+            footerElem = (<RulesPanel close={() => setFooterState("keyboard")}></RulesPanel>)
+            break;
+        default:
+            footerElem = (<></>);
+            break;
     }
 
     return (
         <div className="App">
             <h1>Emojile</h1>
             <GuessContainer guesses={guesses} correctEmojiName={target}/>
-            {footerElem}
+            <div className="FooterWrap">
+                {footerElem}
+            </div>
             <ReactTooltip effect="solid" />
         </div>
     );

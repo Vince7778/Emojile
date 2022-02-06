@@ -1,8 +1,10 @@
-//import checkGuess from "./checkGuess";
+import checkGuess from "./checkGuess";
+import Emoji from "./Emoji";
 
-export default function getShareText(guesses: string[], correct: string): string {
-    const lines = [`Emojile ${guesses.length}`];
-    /*guesses.forEach(g => {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+function getColors(guesses: string[], correct: string): string[] {
+    const lines: string[] = [];
+    guesses.forEach(g => {
         const chk = checkGuess(g, correct);
         let allGray = true, allGreen = true;
         for (let i = 0; i < chk.length; i++) {
@@ -13,6 +15,12 @@ export default function getShareText(guesses: string[], correct: string): string
         if (allGreen) lines.push("🟩");
         else if (allGray) lines.push("⬛");
         else lines.push("🟨");
-    });*/ // commented because this is kinda useless
+    });
+    return lines;
+}
+
+export default function getShareText(guesses: string[], correct: string): string {
+    const lines = [`Emojile ${guesses.length}`];
+    guesses.forEach(g => lines.push(Emoji.getChar(g) + " " + g));
     return lines.join("\n");
 }
