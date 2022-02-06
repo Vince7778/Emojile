@@ -18,7 +18,7 @@ function GuessRow(props: GuessRowProps) {
         if (guessColors[i] !== "green") allGreen = false;
         letters.push(<Letter color={guessColors[i]} key={i} size="small">{emojiLetters[i].toUpperCase()}</Letter>);
         if (emojiLetters[i] === " ") {
-            letters.push(<div className="spacer"></div>)
+            letters.push(<div className="spacer" key={-i}></div>)
         }
     }
 

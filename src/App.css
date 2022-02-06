@@ -70,3 +70,40 @@ img.emoji {
     margin-left: auto;
     margin-right: auto;
 }
+
+.EmojiButton {
+    display: inline-block;
+    text-align: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
+    border: 1px solid rgb(85, 85, 85);
+    border-radius: 3px;
+    margin: 2px;
+    transition: all 100ms ease-out;
+}
+
+.EmojiButton:hover {
+    background-color: rgb(200, 200, 200);
+    transition: all 100ms ease-in;
+}
+
+.EmojiKeyboard {
+    display: block;
+    text-align: center;
+    border: 1px solid rgb(85, 85, 85);
+    height: 300px;
+    width: 50%;
+    overflow-y: scroll;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    padding: 5px;
+    transform: translateX(50%);
+    background-color: white;
+}
+
+.App {
+    padding-bottom: 320px;
+}

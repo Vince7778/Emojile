@@ -13,8 +13,10 @@ function GuessContainer(props: GuessContainerProps) {
     })
 
     return (
-        <div>
-            {guessRows}
+        <div className="GuessContainer">
+            <div>
+                {guessRows}
+            </div>
         </div>
     );
 }
