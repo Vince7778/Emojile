@@ -6,11 +6,10 @@ import EmojiKeyboard from './EmojiKeyboard';
 import ReactTooltip from 'react-tooltip';
 
 function App() {
-    const [target, setTarget] = useState(Emoji.randomEmoji());
+    const [target] = useState(Emoji.randomEmoji());
     const [guesses, setGuesses] = useState<string[]>([]);
 
     function onType(emojiName: string) {
-        console.log("Typed", emojiName);
         setGuesses([...guesses, emojiName]);
     }
 

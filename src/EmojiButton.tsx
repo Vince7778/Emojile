@@ -1,5 +1,4 @@
 import Emoji from "./Emoji";
-import ReactTooltip from "react-tooltip";
 
 type EmojiButtonProps = {
     emojiName: string;

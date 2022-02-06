@@ -16,7 +16,6 @@ function GuessContainer(props: GuessContainerProps) {
     const myRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        console.log("Scrolling");
         if (!myRef.current) return;
         myRef.current.scrollIntoView({ behavior: "smooth", block: "end" });
     });

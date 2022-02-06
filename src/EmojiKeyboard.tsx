@@ -1,5 +1,8 @@
 import EmojiButton from "./EmojiButton";
 import Emoji from "./Emoji";
+import EmojiSearchBox from "./EmojiSearchBox";
+import { useEffect, useState } from "react";
+import ReactTooltip from "react-tooltip";
 
 type EmojiKeyboardProps = {
     filter?: string;
@@ -7,14 +10,21 @@ type EmojiKeyboardProps = {
 }
 
 function EmojiKeyboard(props: EmojiKeyboardProps) {
-    const nameList = Emoji.getNameList(props.filter);
+    const [searchQuery, setSearchQuery] = useState(props.filter || "");
+    const nameList = Emoji.getNameList(searchQuery);
     const buttons = nameList.map((n, i) => {
         return (
             <EmojiButton emojiName={n} click={s => props.onType(s)} key={i}></EmojiButton>
         )
     });
+
+    useEffect(() => {
+        ReactTooltip.rebuild();
+    });
+
     return (
         <div className="EmojiKeyboard">
+            <EmojiSearchBox searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
             {buttons}
         </div>
     )
