@@ -23,7 +23,7 @@ function EmojiKeyboard(props: EmojiKeyboardProps) {
     });
 
     return (
-        <div className="EmojiKeyboard">
+        <div className="Footer">
             <EmojiSearchBox searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
             {buttons}
         </div>

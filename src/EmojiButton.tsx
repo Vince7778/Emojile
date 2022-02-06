@@ -10,7 +10,7 @@ function EmojiButton(props: EmojiButtonProps) {
     const emojiElem = Emoji.toTwemoji(emojiCode);
 
     return (
-        <div className="EmojiButton" onClick={() => props.click(props.emojiName)} data-tip={props.emojiName}>
+        <div className="DivButton EmojiButton" onClick={() => props.click(props.emojiName)} data-tip={props.emojiName}>
             {emojiElem}
         </div>
     )

@@ -1,3 +1,7 @@
+h1 {
+    text-align: center;
+}
+
 .Letter {
     display: flex;
     flex-direction: row;
@@ -64,6 +68,8 @@
 
 .GuessContainer {
     scroll-margin-bottom: 320px;
+    width: 75%;
+    margin: auto;
 }
 
 img.emoji {
@@ -76,30 +82,33 @@ img.emoji {
 }
 
 .EmojiButton {
-    display: inline-block;
-    text-align: center;
-    justify-content: center;
     width: 40px;
     height: 40px;
     font-size: 30px;
+}
+
+.DivButton {
+    display: inline-block;
+    text-align: center;
+    justify-content: center;
     border: 1px solid rgb(85, 85, 85);
     border-radius: 3px;
     margin: 2px;
     transition: all 100ms ease-out;
 }
 
-.EmojiButton:hover {
+.DivButton:hover {
     background-color: rgb(200, 200, 200);
     transition: all 100ms ease-in;
 }
 
-.EmojiKeyboard {
+.Footer {
     display: block;
     text-align: center;
     border: 1px solid rgb(85, 85, 85);
     height: 300px;
     width: 50%;
-    overflow-y: scroll;
+    overflow-y: auto;
     position: fixed;
     left: 0;
     bottom: 0;
@@ -110,4 +119,9 @@ img.emoji {
 
 .App {
     padding-bottom: 320px;
+}
+
+.TextButton {
+    padding: 10px;
+    font-size: 20px;
 }
