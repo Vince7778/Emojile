@@ -1,46 +1,15 @@
-# Getting Started with Create React App
+# Emojile
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a spinoff of [Wordle](https://www.powerlanguage.co.uk/wordle/) which uses emojis instead of words.
 
-## Available Scripts
+### Scoring
 
-In the project directory, you can run:
+Since the words are different lengths and there are different numbers of words, the answers are judged somewhat differently. Each word is judged individually against the corresponding word in the correct answer. 
 
-### `npm start`
+Green means it is in the correct position. Yellow means the letter is in the word, but in the wrong position. Gray means that letter is not in the word at all.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The spaces and period at the end of words are also judged differently. A green space means the word is the right length. A yellow space means the word is the wrong length. A gray space means that there is not supposed to be a space after this word (the correct emoji's name ends instead). Every emoji ends in a period.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Emojis
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+The emojis used are only a subset of the full list. Only emojis that are represented with a single code point are used. This means that modifiers like skin tone/gender are excluded, and compound emojis like flags are excluded too.
