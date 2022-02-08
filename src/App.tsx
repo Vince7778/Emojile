@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import GuessContainer from './GuessContainer';
+import GuessContainer from './components/GuessContainer';
 import './App.css';
-import Emoji from "./Emoji";
-import EmojiKeyboard from './EmojiKeyboard';
+import Emoji from "./components/Emoji";
+import EmojiKeyboard from './components/EmojiKeyboard';
 import ReactTooltip from 'react-tooltip';
-import WinPanel from "./WinPanel";
+import WinPanel from "./components/WinPanel";
 import getShareText from './getShareText';
-import { RulesPanel } from './RulesPanel';
+import { RulesPanel } from './components/RulesPanel';
 
 function App() {
     const [target, setTarget] = useState<string>(Emoji.randomEmoji());

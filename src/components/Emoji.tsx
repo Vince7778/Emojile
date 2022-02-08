@@ -1,4 +1,4 @@
-import emojiJsonRaw from "./emojiOut.json";
+import emojiJsonRaw from "../emojiOut.json";
 import twemoji from "twemoji";
 
 const emojiJson = emojiJsonRaw.map(j => {

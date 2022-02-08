@@ -1,6 +1,6 @@
 import React from "react";
 import Letter from "./Letter";
-import checkGuess from "./checkGuess";
+import checkGuess from "../checkGuess";
 import Emoji from "./Emoji";
 
 type GuessRowProps = {

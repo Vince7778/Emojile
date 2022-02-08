@@ -1,5 +1,5 @@
 import checkGuess from "./checkGuess";
-import Emoji from "./Emoji";
+import Emoji from "./components/Emoji";
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 function getColors(guesses: string[], correct: string): string[] {
